@@ -19,6 +19,7 @@ USER root
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     less \
+    libcurl4-gnutls-dev \
     && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -76,5 +77,20 @@ ENV PATH=${PATH}:$CONDA_DIR/envs/python2/bin
 #     && apt-get clean && \
 #     rm -rf /var/lib/apt/lists/*
 ##===========================================================================
+
+##===========================================================================
+# Install dada and its dependencies
+#=================
+USER jovyan
+#setup R configs
+RUN conda install gcc
+# RUN conda install -c r r-devtools=1.10.0
+# RUN echo "r <- getOption('repos'); r['CRAN'] <- 'https://cran.revolutionanalytics.com/'; options(repos = r);options(download.file.method = 'wget')" > ~/.Rprofile
+RUN echo "r <- getOption('repos'); r['CRAN'] <- 'http://cran.revolutionanalytics.com/'; options(repos = r)" > ~/.Rprofile
+RUN Rscript -e "source('http://bioconductor.org/biocLite.R');biocLite(suppressUpdates = FALSE);biocLite('ShortRead', suppressUpdates = FALSE);biocLite('phyloseq', suppressUpdates = FALSE)"
+# RUN Rscript -e "install.packages('devtools');library('devtools');devtools::install_github('benjjneb/dada2')"
+RUN Rscript -e "library('devtools');library(RCurl);library(httr);set_config( config( ssl_verifypeer = 0L ) );devtools::install_github('benjjneb/dada2')"
+# RUN Rscript -e "source('http://bioconductor.org/biocLite.R');biocLite('phyloseq')"
+
 
 USER jovyan
