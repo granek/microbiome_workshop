@@ -5,6 +5,7 @@
 # wget https://raw.githubusercontent.com/jupyter/docker-stacks/master/r-notebook/Dockerfile
 # wget https://raw.githubusercontent.com/jupyter/docker-stacks/master/datascience-notebook/Dockerfile
 # wget https://raw.githubusercontent.com/jupyter/docker-stacks/master/scipy-notebook/Dockerfile
+# See https://github.com/jupyter/docker-stacks
 
 FROM jupyter/r-notebook
 
@@ -12,14 +13,19 @@ MAINTAINER Josh Granek <josh@duke.edu>
 
 USER root
 
-# Install less
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Install Less
+##~~~~~~~~~~~~
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     less \
     && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-##--------------------------------------------------
+##---------------------------------------------------------------------------
+# Install Python 2 and Bash Kernel
+##--------------------------------
 USER jovyan
 
 # Install Python 2 packages
@@ -45,6 +51,30 @@ USER root
 # Install Python 2 kernel spec globally to avoid permission problems when NB_UID
 # switching at runtime.
 RUN $CONDA_DIR/envs/python2/bin/python -m ipykernel install
+##---------------------------------------------------------------------------
+
+##===========================================================================
+# Install qiime
+#=================
+# Is pip install sufficient, or do we need to use apt-get to get dependencies?
+# pypi has qiime version 1.9.1, while debian stable (jessie) only has 1.8.0
+
+#=================
+# pip approach
+#=================
+USER jovyan
+RUN $CONDA_DIR/envs/python2/bin/pip install qiime
+ENV PATH=${PATH}:$CONDA_DIR/envs/python2/bin
+
+#=================
+# apt-get approach
+#=================
+# USER root
+# RUN apt-get update && \
+#     apt-get install -y --no-install-recommends \
+#     qiime \
+#     && apt-get clean && \
+#     rm -rf /var/lib/apt/lists/*
+##===========================================================================
 
 USER jovyan
-##--------------------------------------------------
