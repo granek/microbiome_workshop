@@ -19,7 +19,6 @@ USER root
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     less \
-    libcurl4-gnutls-dev \
     && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -33,14 +32,7 @@ USER jovyan
 RUN conda create --quiet --yes -p $CONDA_DIR/envs/python2 python=2.7 \
     'ipython=4.1*' \
     'ipywidgets=4.1*' \
-    'pandas=0.17*' \
-    'numexpr=2.5*' \
     'matplotlib=1.5*' \
-    'scipy=0.17*' \
-    'seaborn=0.7*' \
-    'cython=0.23*' \
-    'patsy=0.4*' \
-    'statsmodels=0.6*' \
     && conda clean -tipsy
 
 # Install Bash Kernel
@@ -83,14 +75,13 @@ ENV PATH=${PATH}:$CONDA_DIR/envs/python2/bin
 #=================
 USER jovyan
 #setup R configs
-RUN conda install gcc
-# RUN conda install -c r r-devtools=1.10.0
+RUN conda install gcc \
+    && conda clean -tipsy
 # RUN echo "r <- getOption('repos'); r['CRAN'] <- 'https://cran.revolutionanalytics.com/'; options(repos = r);options(download.file.method = 'wget')" > ~/.Rprofile
 RUN echo "r <- getOption('repos'); r['CRAN'] <- 'http://cran.revolutionanalytics.com/'; options(repos = r)" > ~/.Rprofile
 RUN Rscript -e "source('http://bioconductor.org/biocLite.R');biocLite(suppressUpdates = FALSE);biocLite('ShortRead', suppressUpdates = FALSE);biocLite('phyloseq', suppressUpdates = FALSE)"
-# RUN Rscript -e "install.packages('devtools');library('devtools');devtools::install_github('benjjneb/dada2')"
+# RUN Rscript -e "library('devtools');devtools::install_github('benjjneb/dada2')"
 RUN Rscript -e "library('devtools');library(RCurl);library(httr);set_config( config( ssl_verifypeer = 0L ) );devtools::install_github('benjjneb/dada2')"
-# RUN Rscript -e "source('http://bioconductor.org/biocLite.R');biocLite('phyloseq')"
 
 
 USER jovyan
