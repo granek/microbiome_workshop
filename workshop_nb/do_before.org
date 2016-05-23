@@ -1,0 +1,17 @@
+* Install Chrome Web browser
+Install the [[https://www.google.com/chrome/browser/desktop/index.html][Chrome]] web browser on your computer!
+
+Why? We will spend almost all of the workshop using a webbrowser to work with [[http://jupyter.org/][Jupyter Notebooks]], so it is important to have a webbrowser that works well with Jupyter.  Therefore, I strongly recommend that everyone come to the workshop with the [[https://www.google.com/chrome/browser/desktop/index.html][Chrome]] web browser installed on their computer. 
+
+Safari and Firefox do officially work, but I have had problems with both.  Safari is known to not work with Jupyter when using https with a self-signed SSL certificate, which is what we will be doing.  Firefox works, and is generally my prefered browser, but I have had glitches using it with Jupyter.
+* Install SSH Client
+** OS X
+Do you have OS X installed on your computer? If so you are done - it comes with SSH built in.  Just find "Terminal" in the Finder or using Spotlight
+** Windows
+I recommend Putty as a windows SSH Client.  You can download Putty at http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html.
+* Redeem Your Azure Pass
+Please [[https://www.microsoftazurepass.com/howto][redeem your Azure pass]] before the begining of the workshop!
+
+This should take about 10 minutes, and it will save time at the beginging of the workshop if everyone has redeemed their pass ahead of time.  You can redeem your pass at http://www.microsoftazurepass.com/ and you can find detailed instructions at https://www.microsoftazurepass.com/howto.  If you do not already have a Microsoft account, start with the instructions in Appendix 1 at the bottom of the [[https://www.microsoftazurepass.com/howto][instruction page]].  If you don't have a pass already, please contact the workshop instructor.
+* Next Step
+If you have completed the above, you are ready for the workshop!  We will be doing the rest of the setup at the begining of the workshop.  But if you are feeling adventurous, you can start with the [[setup.org][Setup Instructions]] that we will be going through.

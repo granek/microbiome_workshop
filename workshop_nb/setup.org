@@ -1,0 +1,81 @@
+* Install and Redeem
+You should have already followed the instructions to [[do_before.org][prepare for the workshop]], if you haven't, right now you should:
+1. [[https://www.google.com/chrome/browser/desktop/index.html][Installed Chrome]]
+2. [[https://www.microsoftazurepass.com/howto][Redeemed your Azure pass]]
+* Setting Up Your Virtual Machine
+** Allocating Your Virtual Machine
+  1. Log on to https://portal.azure.com/
+  2. Click "+ New" in the upper left corner
+  3. In the search box that opens, search for "Docker on Ubuntu Server"
+  4. Click on "Docker on Ubuntu Server"
+  5. The panel that opens on right should say "Docker on Ubuntu Server" at the top, a bunch of text in the middle, and a blue "Create" button at the bottom.  Click on the "Create" button.
+  6. In the "Create VM" panel that opens up, you will need to configure the following:
+     1. Host Name : your choice of letters and number, just be sure you will remember, and don't mind typing them a few times.
+     2. User Name : your choice of letters and number, just be sure you will remember, and don't mind typing them a few times.
+     3. Password : your choice, just be sure you will remember them, and don't mind typing them a few times.
+     4. Pricing Tier :: I recommend selecting "A2 Standard"
+     5. Option Configuration Network, storage, diagnostics
+	- Endpoints Configured
+	  - NAME: Jupyter
+	  - PRIVATE PORT: 8888
+	  - PROTOCOL: TCP
+	  - PUBLIC PORT: 8888
+  7. After you have configured the above, click the blue "OK" and "Create" buttons.
+  8. Once your virtual machine says "Running" you are read to continue to the next step.
+** SSH to your Virtual Machine
+   1. Click on your virtual machine in your dashboard
+   2. Note what it says under "DNS name" (this should be what you entered for "Host Name" with ".cloudapp.net" at the end.
+   3. SSH to your virtual machine
+      - Mac: open a terminal, then follow the *Linux* instructions
+      - Linux: At the command line, type ~ssh USERNAME@DNS_name~, then hit enter (where *USERNAME* is the user name you selected during VM configuration, and *DNS_name* is the DNS name from your Azure Dashboard.  When you are prompted for the password, put in the password you selected during VM configuration.
+      - Windows: Here are instructions for [[http://kb.mediatemple.net/questions/1595/Using+SSH+in+PuTTY+%28Windows%29][Putty]], other clients will be similar.  Hostname is the *DNS_name* is the DNS name from your Azure Dashboard, Username is the user name you selected during VM configuration, and password is the password you selected during VM configuration.
+   4. If you logged in successfully, you should be presented with a "command prompt" that looks something like this (with your username and hostname instead):
+
+  #+begin_src sh
+josh@mcaw1:~$ 
+  #+end_src
+
+** Pulling the Docker Image
+   Now things get easier!  For the rest of the setup, wherever there is a command to run, I strongly recommend that you copy from this page, and paste into your ssh session.
+   - Mac:
+     - Edit->Copy (command-C)
+     - Edit->Paste (command-V)
+   - Windows: http://www.chiark.greenend.org.uk/~sgtatham/putty/faq.html#faq-cutpaste
+
+
+Run the following command at your terminal, and hit enter:
+
+  #+begin_src sh
+docker pull granek/jupyter-microbiome
+  #+end_src
+
+   This may take a few minutes to download and extract the docker image.  Once it is done it should say:
+  #+begin_src sh
+Status: Downloaded newer image for jupyter/r-notebook:latest
+  #+end_src
+** Downloading Notebooks
+   Run the following command to download the workshop notebooks from Github
+  #+begin_src sh
+   git clone https://github.com/granek/microbiome_workshop.git
+  #+end_src
+** Running Jupyter
+   Next run the following command to launch Jupyter within a Docker Container.  You can (and probably should) change the password. This is the password for your Jupyter notebook.  You can use the same password that you used for your VM, but you don't have to.
+  #+begin_src sh
+docker run -d -p 8888:8888 -e PASSWORD="MyPasswordIsASecret" -e USE_HTTPS=yes --name jupyter1 -v $HOME/microbiome_workshop:/home/jovyan/work granek/jupyter-microbiome start-notebook.sh
+  #+end_src
+
+# docker run -d -p 8888:8888 -e PASSWORD="MyPasswordIsASecret" -e USE_HTTPS=yes --name jupyter1 -v $HOME/microbiome_workshop:/home/jovyan/work jupyter/r-notebook start-notebook.sh
+
+** Opening Jupyter in a web browser
+If everything worked, you should now have a Jupyter server running on your virtual machine, in which case you can access it through Chrome:
+1. Open the URL https://DNS_name:8888/ in Chrome, substituting the DNS name from your Azure Dashboard (Note: be sure to include the "s" in "https").
+2. You should see a scary message: "Your connection is not private . . .". You are getting this message because we did not pay for a signed SSL certificate, it is safe to ignore this warning.
+   1. Click on "ADVANCED"
+   2. Click on "Proceed to HOSTNAME.cloudapp.net (unsafe)"
+   3. Enter your *Jupyter Password* (the one you supplied to the "docker run" command
+
+Attackers might be trying to steal your information from mcaw1.cloudapp.net (for example, passwords, messages, or credit cards). NET::ERR_CERT_AUTHORITY_INVALID
+ https://mcaw1.cloudapp.net:8888/tree
+
+
+*CONTINUE HERE!!!!!*
