@@ -15,5 +15,5 @@ Please [[https://www.microsoftazurepass.com/howto][redeem your Azure pass]] befo
 
 This should take about 10 minutes, and it will save time at the beginging of the workshop if everyone has redeemed their pass ahead of time.  You can redeem your pass at http://www.microsoftazurepass.com/ and you can find detailed instructions at https://www.microsoftazurepass.com/howto.  If you do not already have a Microsoft account, start with the instructions in Appendix 1 at the bottom of the [[https://www.microsoftazurepass.com/howto][instruction page]].  If you don't have a pass already, please contact the workshop instructor.
 * Next Step
-Please continue with the [[setup.org][VM Setup Instructions]] to prepare your virtual machine and be sure that you can connect to it.
+Please continue with the [[vm_setup.org][VM Setup Instructions]] prepare your virtual machine and be sure that you can connect to it.
 # If you have completed the above, you are ready for the workshop!  We will be doing the rest of the setup at the begining of the workshop.  But if you are feeling adventurous, you can start with the [[setup.org][Setup Instructions]] that we will be going through.

@@ -1,11 +1,10 @@
-* Pulling the Docker Image
-   Now things get easier!  For the rest of the setup, wherever there is a command to run, I strongly recommend that you copy from this page, and paste into your ssh session.
+* Copy and Paste
+For the rest of the setup, you have the option of copying from this page, and pasting into your ssh session.
    - Mac:
      - Edit->Copy (command-C)
      - Edit->Paste (command-V)
    - Windows: http://www.chiark.greenend.org.uk/~sgtatham/putty/faq.html#faq-cutpaste
-
-
+* Pulling the Docker Image
 Run the following command at your terminal, and hit enter:
 
   #+begin_src sh

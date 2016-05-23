@@ -6,7 +6,9 @@ docker stop jupyter1
   #+end_src
 * TODO Pause VM
 To pause your VM
-1. Click "Virtual machines (classic)" in the left sidebar, then click on your VM in the list that opens.
-2. Click on the *Stop* button near the top of the panel.  This puts your VM in "suspended animation", saving the state of the VM, without using compute cycles
-3. When you are ready to use your VM again, return to this panel and click "Start"
+1. Click *Virtual machines (classic)* in the left sidebar of https://portal.azure.com/.
+2. Click on your VM in the list of VMs (unless you have been exploring there should only be one).
+3. Click on the *Stop* button near the top of the panel.  This puts your VM in "suspended animation", saving the state of the VM, without using compute cycles
+4. When you are ready to use your VM again, return to this panel and click *Start*
+5. Then go back to [[start_jupyter.org][Start Jupyter]]
    

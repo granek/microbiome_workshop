@@ -11,26 +11,27 @@ You should have already followed the instructions to [[do_before.org][install so
   4. Click on "Docker on Ubuntu Server"
   5. The panel that opens on right should say "Docker on Ubuntu Server" at the top, a bunch of text in the middle, and a blue "Create" button at the bottom.  Click on the "Create" button.
   6. In the "Create VM" panel that opens up, you will need to configure the following:
-     1. Host Name : your choice of letters and number, just be sure you will remember, and don't mind typing them a few times.
-     2. User Name : your choice of letters and number, just be sure you will remember, and don't mind typing them a few times.
-     3. Password : your choice, just be sure you will remember them, and don't mind typing them a few times.
-     4. Pricing Tier :: I recommend selecting "A2 Standard"
-     5. Option Configuration Network, storage, diagnostics -> Endpoints Configured
-	1. NAME: Jupyter
-	2. PRIVATE PORT: 8888
-	3. PROTOCOL: TCP
-	4. PUBLIC PORT: 8888
-  7. After you have configured the above, click the blue "OK" and "Create" buttons.
-  8. Once your virtual machine says "Running" you are read to continue to the next step.
+     - Host Name :: your choice of letters and number, just be sure you will remember, and don't mind typing them a few times.
+     - User Name :: your choice of letters and number, just be sure you will remember, and don't mind typing them a few times.
+     - Password :: your choice, just be sure you will remember them, and don't mind typing them a few times.
+     - Pricing Tier :: I recommend selecting "Standard D2"
+  7. Select *Option Configuration Network, storage, diagnostics* ->
+  8. In the Panel that opens select *Endpoints Configured* and enter the following
+     - NAME :: Jupyter
+     - PRIVATE PORT :: 8888
+     - PROTOCOL :: TCP
+     - PUBLIC PORT :: 8888
+  9. After you have configured the above, click the blue "OK" and "Create" buttons.
+  10. Once your virtual machine says "Running" you are read to continue to the next step.
 ** SSH to your Virtual Machine
-   1. Click on your virtual machine in your dashboard.
-      1. If you can't find details of your VM, click "Virtual machines (classic)" in the left sidebar, then click on your VM in the list that opens.
-   2. Note what it says under "DNS name" (this should be what you entered for "Host Name" with ".cloudapp.net" at the end.
-   3. SSH to your virtual machine
+   1. Click "Virtual machines (classic)" in the left sidebar
+   2. Click on your VM in the list that opens.
+   3. Note what it says under *DNS name* (this should be what you entered for "Host Name" with ".cloudapp.net" at the end.
+   4. SSH to your virtual machine
       - Mac: open a terminal, then follow the *Linux* instructions
       - Linux: At the command line, type ~ssh USERNAME@DNS_name~, then hit enter (where *USERNAME* is the user name you selected during VM configuration, and *DNS_name* is the DNS name from your Azure Dashboard.  When you are prompted for the password, put in the password you selected during VM configuration.
       - Windows: Here are instructions for [[http://kb.mediatemple.net/questions/1595/Using+SSH+in+PuTTY+%28Windows%29][Putty]], other clients will be similar.  Hostname is the *DNS_name* is the DNS name from your Azure Dashboard, Username is the user name you selected during VM configuration, and password is the password you selected during VM configuration.
-   4. If you logged in successfully, you should be presented with a "command prompt" that looks something like this (with your username and hostname instead):
+   5. If you logged in successfully, you should be presented with a "command prompt" that looks something like this (with your username and hostname instead):
 
   #+begin_src sh
 josh@mcaw1:~$ 
