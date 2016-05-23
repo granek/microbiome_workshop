@@ -1,5 +1,5 @@
-Table of Contents
-- [[do_before.org][Install software and redeem your voucher]]
-- [[setup.org][VM Setup Instructions]]
-- [[start_jupyter.org][Start Jupyter]]
-- [[vm_pause.org][Pause Your VM]]
+* Getting Started
+- [[workshop_nb/do_before.org][Install software and redeem your voucher]]
+- [[workshop_nb/setup.org][VM Setup Instructions]]
+- [[workshop_nb/start_jupyter.org][Start Jupyter]]
+- [[workshop_nb/vm_pause.org][Pause Your VM]]
