@@ -1,0 +1,12 @@
+Microsoft keeps the meter running while the VM is running. To stretch your VM dollars, it is a good idea to pause your VM when you are not going to be using it for a while.  The following steps tell you how to do that. Note that Microsoft also charges for storage that you are using, so the meter runs somewhat on a paused VM.
+* TODO Stop Docker
+This step is not strickly necessary, but it will allow us to pull image updates the next time.  Run the following in your *SSH Session*
+  #+begin_src sh
+docker stop jupyter1
+  #+end_src
+* TODO Pause VM
+To pause your VM
+1. Click "Virtual machines (classic)" in the left sidebar, then click on your VM in the list that opens.
+2. Click on the *Stop* button near the top of the panel.  This puts your VM in "suspended animation", saving the state of the VM, without using compute cycles
+3. When you are ready to use your VM again, return to this panel and click "Start"
+   
