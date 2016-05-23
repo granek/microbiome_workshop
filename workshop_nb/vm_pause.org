@@ -3,6 +3,7 @@ Microsoft keeps the meter running while the VM is running. To stretch your VM do
 This step is not strickly necessary, but it will allow us to pull image updates the next time.  Run the following in your *SSH Session*
   #+begin_src sh
 docker stop jupyter1
+docker rm jupyter1
   #+end_src
 * TODO Pause VM
 To pause your VM
