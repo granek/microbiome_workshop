@@ -1,7 +1,8 @@
 * Install and Redeem
 You should have already followed the instructions to [[do_before.org][prepare for the workshop]], if you haven't, right now you should:
-1. [[https://www.google.com/chrome/browser/desktop/index.html][Installed Chrome]]
-2. [[https://www.microsoftazurepass.com/howto][Redeemed your Azure pass]]
+1. [[https://www.google.com/chrome/browser/desktop/index.html][Install Chrome]]
+2. [[http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html][Install SSH (windows only)]]
+3. [[https://www.microsoftazurepass.com/howto][Redeem your Azure pass]]
 * Setting Up Your Virtual Machine
 ** Allocating Your Virtual Machine
   1. Log on to https://portal.azure.com/
@@ -69,13 +70,16 @@ docker run -d -p 8888:8888 -e PASSWORD="MyPasswordIsASecret" -e USE_HTTPS=yes --
 ** Opening Jupyter in a web browser
 If everything worked, you should now have a Jupyter server running on your virtual machine, in which case you can access it through Chrome:
 1. Open the URL https://DNS_name:8888/ in Chrome, substituting the DNS name from your Azure Dashboard (Note: be sure to include the "s" in "https").
-2. You should see a scary message: "Your connection is not private . . .". You are getting this message because we did not pay for a signed SSL certificate, it is safe to ignore this warning.
-   1. Click on "ADVANCED"
-   2. Click on "Proceed to HOSTNAME.cloudapp.net (unsafe)"
-   3. Enter your *Jupyter Password* (the one you supplied to the "docker run" command
+2. It is safe to ignore the scary warning that starts: "Your connection is not private . . .". You are getting this message because we are not using a signed SSL certificate. 
+3. Click on "ADVANCED"
+4. Click on "Proceed to HOSTNAME.cloudapp.net (unsafe)"
+5. Enter your *Jupyter Password* (the one you supplied to the "docker run" command
+6. *CONTINUE HERE!!!!!*
 
-Attackers might be trying to steal your information from mcaw1.cloudapp.net (for example, passwords, messages, or credit cards). NET::ERR_CERT_AUTHORITY_INVALID
- https://mcaw1.cloudapp.net:8888/tree
+#  https://mcaw1.cloudapp.net:8888/tree
 
 
-*CONTINUE HERE!!!!!*
+** TODO Shutdown
+*** TODO stop docker
+*** TODO shutdown VM
+    
