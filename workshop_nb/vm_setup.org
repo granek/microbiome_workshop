@@ -35,51 +35,5 @@ You should have already followed the instructions to [[do_before.org][install so
   #+begin_src sh
 josh@mcaw1:~$ 
   #+end_src
-
-** Pulling the Docker Image
-   Now things get easier!  For the rest of the setup, wherever there is a command to run, I strongly recommend that you copy from this page, and paste into your ssh session.
-   - Mac:
-     - Edit->Copy (command-C)
-     - Edit->Paste (command-V)
-   - Windows: http://www.chiark.greenend.org.uk/~sgtatham/putty/faq.html#faq-cutpaste
-
-
-Run the following command at your terminal, and hit enter:
-
-  #+begin_src sh
-docker pull granek/jupyter-microbiome
-  #+end_src
-
-   This may take a few minutes to download and extract the docker image.  Once it is done it should say:
-  #+begin_src sh
-Status: Downloaded newer image for jupyter/r-notebook:latest
-  #+end_src
-** Downloading Notebooks
-   Run the following command to download the workshop notebooks from Github
-  #+begin_src sh
-   git clone https://github.com/granek/microbiome_workshop.git
-  #+end_src
-** Running Jupyter
-   Next run the following command to launch Jupyter within a Docker Container.  You can (and probably should) change the password. This is the password for your Jupyter notebook.  You can use the same password that you used for your VM, but you don't have to.
-  #+begin_src sh
-docker run -d -p 8888:8888 -e PASSWORD="MyPasswordIsASecret" -e USE_HTTPS=yes --name jupyter1 -v $HOME/microbiome_workshop:/home/jovyan/work granek/jupyter-microbiome start-notebook.sh
-  #+end_src
-
-# docker run -d -p 8888:8888 -e PASSWORD="MyPasswordIsASecret" -e USE_HTTPS=yes --name jupyter1 -v $HOME/microbiome_workshop:/home/jovyan/work jupyter/r-notebook start-notebook.sh
-
-** Opening Jupyter in a web browser
-If everything worked, you should now have a Jupyter server running on your virtual machine, in which case you can access it through Chrome:
-1. Open the URL https://DNS_name:8888/ in Chrome, substituting the DNS name from your Azure Dashboard (Note: be sure to include the "s" in "https").
-2. It is safe to ignore the scary warning that starts: "Your connection is not private . . .". You are getting this message because we are not using a signed SSL certificate. 
-3. Click on "ADVANCED"
-4. Click on "Proceed to HOSTNAME.cloudapp.net (unsafe)"
-5. Enter your *Jupyter Password* (the one you supplied to the "docker run" command
-6. *CONTINUE HERE!!!!!*
-
-#  https://mcaw1.cloudapp.net:8888/tree
-
-
-** TODO Shutdown
-*** TODO stop docker
-*** TODO shutdown VM
-    
+* Next Step
+   Once you have successfully SSHed into your VM, you are ready to [[start_jupyter.org][Start Jupyter]]
