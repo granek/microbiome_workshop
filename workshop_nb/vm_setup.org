@@ -1,5 +1,5 @@
 * Install and Redeem
-You should have already followed the instructions to [[do_before.org][prepare for the workshop]], if you haven't, right now you should:
+You should have already followed the instructions to [[do_before.org][install software and redeem your voucher]], if you haven't, right now you should:
 1. [[https://www.google.com/chrome/browser/desktop/index.html][Install Chrome]]
 2. [[http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html][Install SSH (windows only)]]
 3. [[https://www.microsoftazurepass.com/howto][Redeem your Azure pass]]
@@ -15,16 +15,16 @@ You should have already followed the instructions to [[do_before.org][prepare fo
      2. User Name : your choice of letters and number, just be sure you will remember, and don't mind typing them a few times.
      3. Password : your choice, just be sure you will remember them, and don't mind typing them a few times.
      4. Pricing Tier :: I recommend selecting "A2 Standard"
-     5. Option Configuration Network, storage, diagnostics
-	- Endpoints Configured
-	  - NAME: Jupyter
-	  - PRIVATE PORT: 8888
-	  - PROTOCOL: TCP
-	  - PUBLIC PORT: 8888
+     5. Option Configuration Network, storage, diagnostics -> Endpoints Configured
+	1. NAME: Jupyter
+	2. PRIVATE PORT: 8888
+	3. PROTOCOL: TCP
+	4. PUBLIC PORT: 8888
   7. After you have configured the above, click the blue "OK" and "Create" buttons.
   8. Once your virtual machine says "Running" you are read to continue to the next step.
 ** SSH to your Virtual Machine
-   1. Click on your virtual machine in your dashboard
+   1. Click on your virtual machine in your dashboard.
+      1. If you can't find details of your VM, click "Virtual machines (classic)" in the left sidebar, then click on your VM in the list that opens.
    2. Note what it says under "DNS name" (this should be what you entered for "Host Name" with ".cloudapp.net" at the end.
    3. SSH to your virtual machine
       - Mac: open a terminal, then follow the *Linux* instructions
