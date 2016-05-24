@@ -14,7 +14,7 @@ You should have already followed the instructions to [[do_before.org][install so
      - Host Name :: your choice of letters and number, just be sure you will remember, and don't mind typing them a few times.
      - User Name :: your choice of letters and number, just be sure you will remember, and don't mind typing them a few times.
      - Password :: your choice, just be sure you will remember them, and don't mind typing them a few times.
-     - Pricing Tier :: I recommend selecting "Standard D2"
+     - Pricing Tier :: I recommend selecting *Standard D3 v2* (you will need to click "View all" to find this option).  Be careful not to select one of the similar sounding options.
   7. Select *Option Configuration Network, storage, diagnostics* ->
   8. In the Panel that opens select *Endpoints Configured* and enter the following
      - NAME :: Jupyter
@@ -22,7 +22,8 @@ You should have already followed the instructions to [[do_before.org][install so
      - PROTOCOL :: TCP
      - PUBLIC PORT :: 8888
   9. After you have configured the above, click the blue "OK" and "Create" buttons.
-  10. Once your virtual machine says "Running" you are read to continue to the next step.
+  10. This can take several minutes, so you might want to do something while you wait.
+  11. Once your virtual machine says "Running" you are ready to continue to the next step.
 ** SSH to your Virtual Machine
    1. Click "Virtual machines (classic)" in the left sidebar
    2. Click on your VM in the list that opens.
