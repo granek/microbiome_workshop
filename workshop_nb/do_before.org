@@ -10,10 +10,14 @@ Safari and Firefox do officially work, but I have had problems with both.  Safar
 Do you have OS X installed on your computer? If so you are done - it comes with SSH built in.  Just find "Terminal" in the Finder or using Spotlight
 ** Windows
 I recommend Putty as a windows SSH Client.  You can download Putty at https://the.earth.li/~sgtatham/putty/latest/x86/putty.exe.  Note that this link downloads the program itself(there Putty installer), so you can start it running by double clicking on the downloaded file. If you need help getting going with Putty, look at the [[http://the.earth.li/~sgtatham/putty/0.67/htmldoc/Chapter2.html#gs]["Quick Start" Instructions]]  
+* Set Up Microsoft Account
+  You will need a Microsoft Account to redeem your Azure pass, activate your virtual machine, and manage it.  If you already have a Microsoft Account, you can skip this step.  If not, go to https://signup.live.com/ to set up an account.  
 * Redeem Your Azure Pass
 Please [[https://www.microsoftazurepass.com/howto][redeem your Azure pass]] before the begining of the workshop!
 
-This should take about 10 minutes, and it will save time at the beginging of the workshop if everyone has redeemed their pass ahead of time.  You can redeem your pass at http://www.microsoftazurepass.com/ and you can find detailed instructions at https://www.microsoftazurepass.com/howto.  If you do not already have a Microsoft account, start with the instructions in Appendix 1 at the bottom of the [[https://www.microsoftazurepass.com/howto][instruction page]].  If you don't have a pass already, please contact the workshop instructor.
+This should take about 10 minutes, and it will save time at the beginging of the workshop if everyone has redeemed their pass ahead of time.  You can redeem your pass at http://www.microsoftazurepass.com/ and you can find detailed instructions at https://www.microsoftazurepass.com/howto.
+
+If you don't have a pass already, please contact the workshop instructor.
 * Next Step
 Please continue with the [[vm_setup.org][VM Setup Instructions]] prepare your virtual machine and be sure that you can connect to it.
 # If you have completed the above, you are ready for the workshop!  We will be doing the rest of the setup at the begining of the workshop.  But if you are feeling adventurous, you can start with the [[setup.org][Setup Instructions]] that we will be going through.
