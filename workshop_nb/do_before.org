@@ -9,7 +9,7 @@ Safari and Firefox do officially work, but I have had problems with both.  Safar
 ** OS X
 Do you have OS X installed on your computer? If so you are done - it comes with SSH built in.  Just find "Terminal" in the Finder or using Spotlight
 ** Windows
-I recommend Putty as a windows SSH Client.  You can download Putty at http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html.
+I recommend Putty as a windows SSH Client.  You can download Putty at https://the.earth.li/~sgtatham/putty/latest/x86/putty.exe.  Note that this link downloads the program itself(there Putty installer), so you can start it running by double clicking on the downloaded file. If you need help getting going with Putty, look at the [[http://the.earth.li/~sgtatham/putty/0.67/htmldoc/Chapter2.html#gs]["Quick Start" Instructions]]  
 * Redeem Your Azure Pass
 Please [[https://www.microsoftazurepass.com/howto][redeem your Azure pass]] before the begining of the workshop!
 
