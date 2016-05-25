@@ -1,4 +1,5 @@
 * Getting Ready for the Workshop
+  Please complete the following four steps to prepare the workshop:
   1. [[workshop_nb/do_before.org][Install software and redeem your voucher]]
   2. [[workshop_nb/vm_setup.org][VM Setup Instructions]]
   3. [[workshop_nb/start_jupyter.org][Start Jupyter]]
