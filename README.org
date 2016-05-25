@@ -5,6 +5,7 @@
   3. [[workshop_nb/start_jupyter.org][Start Jupyter]]
   4. [[workshop_nb/vm_pause.org][Pause Your VM]]
 * Resources
+Here is a list of resources relevant to this workshop, for future reference.
 ** This Workshop
    - [[https://github.com/granek/microbiome_workshop][GitHub Repository]]
    - [[https://hub.docker.com/r/granek/jupyter-microbiome/][Docker Image]]
